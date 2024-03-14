@@ -9,3 +9,4 @@ global using Common.Abstractions;
 global using Basket.API.Exceptions;
 global using Marten;
 global using System.Text.Json;
+global using Common.Exceptions;
