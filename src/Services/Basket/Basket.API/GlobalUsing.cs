@@ -1,0 +1,11 @@
+global using Carter;
+global using Common.CQRS;
+global using Basket.API.Domain;
+global using Mapster;
+global using MediatR;
+global using FluentValidation;
+global using Basket.API.Data;
+global using Common.Abstractions;
+global using Basket.API.Exceptions;
+global using Marten;
+global using System.Text.Json;
