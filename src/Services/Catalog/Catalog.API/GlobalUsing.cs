@@ -6,3 +6,4 @@ global using Catalog.API.Domain;
 global using Common.CQRS;
 global using Catalog.API.Exceptions;
 global using FluentValidation;
+global using Common.Abstractions;
