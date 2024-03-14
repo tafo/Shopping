@@ -7,3 +7,4 @@ global using Common.CQRS;
 global using Catalog.API.Exceptions;
 global using FluentValidation;
 global using Common.Abstractions;
+global using Marten.Pagination;
