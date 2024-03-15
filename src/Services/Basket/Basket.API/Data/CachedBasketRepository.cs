@@ -25,7 +25,7 @@ public class CachedBasketRepository(IBasketRepository repository, IDistributedCa
     public async Task<BasketEntity> StoreBasket(BasketEntity basket, CancellationToken cancellationToken = default)
     {
         await repository.StoreBasket(basket, cancellationToken);
-        await cache.SetStringAsync(basket.UserName, JsonSerializer.Serialize(basket), cancellationToken);
+        await cache.SetStringAsync(basket.Username, JsonSerializer.Serialize(basket), cancellationToken);
         return basket;
     }
 

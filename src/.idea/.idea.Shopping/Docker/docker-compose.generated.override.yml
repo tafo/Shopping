@@ -37,3 +37,21 @@ services:
     - "C:\\Projects\\ozkaya\\Shopping\\src\\Services\\Catalog\\Catalog.API:/app:rw"
     - "C:\\Projects\\ozkaya\\Shopping\\src:/src:rw"
     working_dir: "/app"
+  discount.grpc:
+    build:
+      context: "C:\\Projects\\ozkaya\\Shopping\\src"
+      dockerfile: "Services/Discount/Discount.Grpc/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Discount.Grpc.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "discountgrpc:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\tayfu\\.nuget\\packages:/home/app/.nuget/packages"
+    - "C:\\Projects\\ozkaya\\Shopping\\src\\Services\\Discount\\Discount.Grpc:/app:rw"
+    - "C:\\Projects\\ozkaya\\Shopping\\src:/src:rw"
+    working_dir: "/app"

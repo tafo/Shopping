@@ -17,7 +17,7 @@ builder.Services.AddMediatR(config =>
 builder.Services.AddMarten(opts =>
 {
     opts.Connection(connectionString);
-    opts.Schema.For<BasketEntity>().Identity(x => x.UserName);
+    opts.Schema.For<BasketEntity>().Identity(x => x.Username);
 }).UseLightweightSessions();
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();

@@ -8,7 +8,7 @@ public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
     public StoreBasketCommandValidator()
     {
         RuleFor(x => x.Basket).NotNull().WithMessage("Basket can not be null");
-        RuleFor(x => x.Basket.UserName).NotEmpty().WithMessage("UserName is required");
+        RuleFor(x => x.Basket.Username).NotEmpty().WithMessage("UserName is required");
     }
 }
 
@@ -17,6 +17,6 @@ public class StoreBasketCommandHandler(IBasketRepository repository) : ICommandH
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
         await repository.StoreBasket(command.Basket, cancellationToken);
-        return new StoreBasketResult(command.Basket.UserName);
+        return new StoreBasketResult(command.Basket.Username);
     }
 }
