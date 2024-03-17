@@ -46,7 +46,7 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     return handler;
 });
 
-builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddHealthChecks().AddNpgSql(connectionString).AddRedis(redisConnectionString);
 

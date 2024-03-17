@@ -22,7 +22,7 @@ builder.Services.AddValidatorsFromAssembly(assembly);
 
 builder.Services.AddCarter();
 
-builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddHealthChecks().AddNpgSql(connectionString);
 
