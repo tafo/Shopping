@@ -73,3 +73,21 @@ services:
     - "C:\\Projects\\ozkaya\\Shopping\\src\\Services\\Ordering\\Ordering.API:/app:rw"
     - "C:\\Projects\\ozkaya\\Shopping\\src:/src:rw"
     working_dir: "/app"
+  yarpapigateway:
+    build:
+      context: "C:\\Projects\\ozkaya\\Shopping\\src"
+      dockerfile: "ApiGateways/YarpApiGateway/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/YarpApiGateway.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "yarpapigateway:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\tayfu\\.nuget\\packages:/home/app/.nuget/packages"
+    - "C:\\Projects\\ozkaya\\Shopping\\src\\ApiGateways\\YarpApiGateway:/app:rw"
+    - "C:\\Projects\\ozkaya\\Shopping\\src:/src:rw"
+    working_dir: "/app"
